@@ -6,4 +6,3 @@ console.log(a + b);
 console.log(a * b);
 console.log(a / b);
 console.log("Hello " + myName);
-
