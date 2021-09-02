@@ -8,14 +8,12 @@ const h1 = document.querySelector("div.hello:first-child h1"); // 똑같은게 �
 //title.innerText = "Hello";
 
 function handleTitleClick(){
-    const currentColor = h1.style.color;
-    //console.log("title was clicked!");
-    if(currentColor === "blue"){
-        newColor ="tomato";
+    const clickedClass = "clicked"; // 오타를 막기위해 변수로 저장 후 값 불러오거나 출력하기
+    if(h1.classList.contains(clickedClass)) { 
+        h1.classList.remove(clickedClass);
     } else {
-        newColor = "blue";
+        h1.classList.add(clickedClass);
     }
-    h1.style.color = newColor;
 }
 
 
