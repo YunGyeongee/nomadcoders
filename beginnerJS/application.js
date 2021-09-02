@@ -1,8 +1,20 @@
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
+const greeting = document.querySelector("#greeting");
 
-function onLoginBtnClick{
-    console.log("hello", loginInput.value);
+const HIDDEN_CALSSNAME = "hidden";
+
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CALSSNAME);
+    const username = loginInput.value; 
+    //console.log(username);
+    localStorage.setItem("username", username);
+    //greeting.innerText = "Hello " + username;
+    greeting.innerText = `hello ${username}`; // '' 홑따옴표 아님 `` 백틱
+
+    greeting.classList.remove(HIDDEN_CALSSNAME);
 }
 
-loginButton.addEventListener("click", onLoginBtnClick)
+
+loginForm.addEventListener("submit", onLoginSubmit);
